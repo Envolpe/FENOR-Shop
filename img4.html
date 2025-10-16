@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abito Elegante - FENOR</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>
+      <button type="button" class="brand-button" onclick="location.href='index.html'" aria-label="Vai alla homepage">
+      <b> FENOR Shop</b>
+     </button>
+    </h1>
+  </header>
+
+  <main class="product-page">
+    <div class="product-image">
+      <img src="immagini/img4.webp" alt="Abito Elegante Donna" style="width: 20rem; height: auto;"/>
+    </div>
+    <div class="product-details">
+      <h2>Abito Elegante Donna</h2>
+      <p class="price">€199.00</p>
+      <p class="description">
+        Questo abito elegante è perfetto per cerimonie, eventi speciali o serate raffinate. Realizzato in tessuto leggero e traspirante, offre comfort e stile in ogni occasione.
+      </p>
+
+      <label for="size">Taglia:</label>
+      <select id="size">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      
+
+      <button onclick="addToCart()" style="font-size: small;">Aggiungi al carrello</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Tutti i diritti riservati</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+    <style>
+
+            body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-details {
+  max-width: 400px;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #e91e63;
+  margin: 0.5rem 0;
+}
+
+.description {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  background-color: #222222;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 2rem;
+}
+
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+
+    </style>
+
+
+</body>
+</html>

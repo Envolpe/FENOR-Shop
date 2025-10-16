@@ -1,0 +1,82 @@
+<section id="contatti" class="contact-section">
+  <div class="container">
+    
+
+ <header>
+    
+    <link rel="icon" href="LOGO/LOGO.jpeg" type="image/png">
+  </header>
+
+
+    <p>Hai domande? Compila il modulo e ti risponderemo al più presto.</p>
+
+    <form id="contactForm" class="contact-form" novalidate>
+      <label>
+        Nome
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Messaggio
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit">Invia</button>
+    </form>
+
+    <p class="contact-info">Oppure scrivi a: <a href="mailto:tuo@email.com">tuo@email.com</a></p>
+  </div>
+</section>
+
+<style>
+  
+  .contact-section{
+  background:#f8f8f8;
+  padding:3rem 1rem;
+  margin-top:2rem;
+}
+.contact-section .container{ max-width:1000px; margin:0 auto; }
+.contact-section h2{ margin-bottom:0.5rem; }
+.contact-form{ display:grid; gap:0.75rem; max-width:600px; }
+.contact-form label{ display:flex; flex-direction:column; font-size:0.95rem; }
+.contact-form input,
+.contact-form textarea{
+  padding:0.5rem; border:1px solid #ccc; border-radius:4px;
+}
+.contact-form button{
+  width:fit-content; padding:0.6rem 1rem; background:#222; color:#fff; border:none; border-radius:4px; cursor:pointer;
+}
+.contact-info{ margin-top:1rem; font-size:0.95rem; }
+</style>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function(){
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      // raccolta dati (puoi inviarli al server con fetch)
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim()
+      };
+      if(!data.name || !data.email || !data.message){
+        alert('Compila tutti i campi.');
+        return;
+      }
+      // esempio: mostra conferma all'utente
+      alert('Messaggio inviato. Grazie, ' + data.name + '!');
+      form.reset();
+      // TODO: inviare `data` al server con fetch('/api/contact', { method:'POST', body: JSON.stringify(data) })
+    });
+  }
+});
+</script>
+
